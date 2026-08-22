@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant black (&:where(.black, .black *));
+
+@theme {
+  --color-bg: #f3f3f1;
+  --color-sidebar: #e8e8e5;
+  --color-surface: #ffffff;
+  --color-fg: #1c1c1a;
+  --color-muted: #5e5e59;
+  --color-subtle: #8a8a84;
+  --color-primary: #3a434c;
+  --color-primary-fg: #f3f3f1;
+  --color-border: color-mix(in oklab, var(--color-fg) 12%, transparent);
+  --color-border-strong: color-mix(in oklab, var(--color-fg) 20%, transparent);
+  --color-hover: color-mix(in oklab, var(--color-fg) 6%, transparent);
+  --color-active: color-mix(in oklab, var(--color-fg) 10%, transparent);
+  --color-note: color-mix(in oklab, var(--color-fg) 4%, transparent);
+  --color-danger: #8a3a3a;
+  --color-danger-fg: #f7ecec;
+
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-soft: "Nunito", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --shadow-sheet: 0 16px 40px color-mix(in oklab, var(--color-fg) 16%, transparent);
+
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #313338;
+    --color-sidebar: #2b2d31;
+    --color-surface: #1e1f22;
+    --color-fg: #dbdee1;
+    --color-muted: #949ba4;
+    --color-subtle: #6d7178;
+    --color-primary: #d7dadc;
+    --color-primary-fg: #1e1f22;
+    --color-border: color-mix(in oklab, var(--color-fg) 10%, transparent);
+    --color-border-strong: color-mix(in oklab, var(--color-fg) 18%, transparent);
+    --color-hover: color-mix(in oklab, var(--color-fg) 7%, transparent);
+    --color-active: color-mix(in oklab, var(--color-fg) 12%, transparent);
+    --color-note: color-mix(in oklab, var(--color-fg) 6%, transparent);
+    --color-danger: #c77a7a;
+    --color-danger-fg: #1a1212;
+  }
+
+  .black {
+    --color-bg: #000000;
+    --color-sidebar: #050505;
+    --color-surface: #0a0a0a;
+    --color-fg: #ececec;
+    --color-muted: #9a9a9a;
+    --color-subtle: #6e6e6e;
+    --color-primary: #f2f2f2;
+    --color-primary-fg: #000000;
+    --color-border: color-mix(in oklab, var(--color-fg) 14%, transparent);
+    --color-border-strong: color-mix(in oklab, var(--color-fg) 22%, transparent);
+    --color-hover: color-mix(in oklab, var(--color-fg) 8%, transparent);
+    --color-active: color-mix(in oklab, var(--color-fg) 14%, transparent);
+    --color-note: color-mix(in oklab, var(--color-fg) 7%, transparent);
+    --color-danger: #c97a7a;
+    --color-danger-fg: #0a0a0a;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  body.dragging {
+    user-select: none;
+    cursor: grabbing;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  textarea,
+  input {
+    font: inherit;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 22%, transparent);
+    color: var(--color-fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .rt b,
+  .rt strong {
+    font-weight: 600;
+  }
+
+  .rt i,
+  .rt em {
+    font-style: italic;
+  }
+
+  .rt u {
+    text-decoration: underline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
