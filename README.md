@@ -1,46 +1,19 @@
-# Bedside — RT notes
+# @babel/core
 
-Your Respiratory Therapy notes app. Notes stay on this computer (browser storage). Nothing is uploaded.
+> Babel compiler core.
 
-## What you need
+See our website [@babel/core](https://babeljs.io/docs/babel-core) for more information or the [issues](https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20core%22+is%3Aopen) associated with this package.
 
-1. **Node.js 20 or newer**  
-   Download: https://nodejs.org  
-   During install, keep the option that says **Add to PATH**.
-2. **VS Code** (optional, but handy)
+## Install
 
-## Run the app
+Using npm:
 
-1. Unzip this folder.
-2. Open the `bedside-notes` folder in VS Code (**File → Open Folder**).
-3. Open the Terminal in VS Code (**Terminal → New Terminal**).
-4. Run:
-
-```bash
-npm install
-npm run dev
+```sh
+npm install --save-dev @babel/core
 ```
 
-5. A browser tab should open at http://localhost:5173  
-   If it does not, copy that address into Chrome or Edge.
+or using yarn:
 
-To stop the app, click the terminal and press `Ctrl+C`.
-
-## Build a production copy
-
-```bash
-npm run build
-npm run preview
+```sh
+yarn add @babel/core --dev
 ```
-
-`npm run build` creates a `dist` folder you can host anywhere static files work.
-
-## Project layout
-
-- `src/components` — sidebar, editor, flowchart, formatting
-- `src/data/seed.ts` — your original RT notes
-- `src/store/notes.ts` — save / undo / trash
-- `src/styles.css` — light, dark, and black themes
-- `index.html` — the page shell
-
-This is a React + TypeScript + Vite + Tailwind app. You do not need to know those to run it.
